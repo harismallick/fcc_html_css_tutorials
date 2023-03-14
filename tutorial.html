@@ -1,0 +1,188 @@
+<!-- This is a tutorial document to learn the basics of HTML 
+The sources used for the basics:
+https://www.cs.kent.ac.uk/teaching/10/modules/CO/3/32/FIT_Chapters/Chapter04/BasicHTMLTags.html
+https://www.youtube.com/watch?v=PlxWf493en4
+
+Notes:
+- hypertext markup language is a standard used to display information on web pages.
+- Every html file needs to start and end with the <html> </html> tags
+- Every html document requires 4 minimum tags: html, head, title, and body.
+- Tags tell the browser to display the internal content in a specific way.
+- Tags that don't require closing tags are known as void elements.
+- This is because they perform a specific function, but no content is stored in them.
+- <!DOCTYPE>, <br>, <hr> are examples of void elements.
+- Style tags are used to style the text being displayed. Bold, italics, underline, strong
+    are all examples of style tags.
+- Style tags are very rarely used now. Majority of the stylizing is done using CSS now.
+- HTML special characters: these are characters that preversve the syntax of html.
+    - In order to use these special characters as regular text, they must be written differently.
+    - & written as &amp;
+    - " written as &quot;
+    - ' written as &#039
+    - < written as &lt;
+    - > written as &gt;
+
+-->
+<!DOCTYPE html> <!-- This tag is to declare that this document is HTML5 -->
+
+<html>
+    <head>
+        <!-- This is where you would load js and css files and add metadata about the website -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- This meta tag ensures that your html page is displayed properly on all device types, based on their resolution
+            initial-scale allows you to set the zoom variable for your webpage. 1 refers to having no zoom.
+        -->
+        <title>HTML Tutorial</title>
+        <!-- This tag sets the name of the HTML page that will be displayed on the browser tab -->
+    </head>
+    <body>
+        <!-- This is where all the information to be displayed on the website goes -->
+        <h1>This is a tutorial</h1> <!-- Use this tag with a number to create headers of different sizes -->
+        <h2>This is a tutorial</h2>
+        <h3>This is a tutorial</h3>
+        <h4>This is a tutorial</h4>
+        <h5>This is a tutorial</h5>
+        <h6>This is a tutorial</h6>
+
+        <p> 
+            Hello world!<br> <!-- This tag creates line breaks within the same paragraph -->
+            Text can also be display in <b>BOLD</b> or in <i>Italics</i> using their specific tags.<br>
+            You can also <u>underline your text</u> or use the <em>emphasis tags</em>, which by default converts to italics.<br>
+            The <strong>STRONG</strong> tag does the same thing as the tag for bold.<br>
+
+        </p>
+        <hr> <!-- The <hr> tag creates a horizontal line along the web page. This is a void element -->
+        <p>
+            Creating another paragraph with tags will automatically introduce a line break.<br>
+            Hyperlinking text on the webpage:<br>
+            To achieve this, you have to use the &lt;a&gt; and &lt;/a&gt; tags.<br>
+            Anchor tags are used with various different arguments. Some of these include: <br>
+            - href="url" - This argument allows you to add the url of the webpage the text should forward you to.<br>
+            - target="" - This argument allows you to pass whether you want the url to be opened on the same tab or a different browser tab.<br>
+            - To open on a new browser tab, use the "_blank" option.<br>
+        </p>
+        <p>
+            The resource used to put together this tutorial is available <a href="https://www.youtube.com/watch?v=PlxWf493en4" target="_blank">here.</a><br>
+            <!-- Images can be added using the <img> tag. If the image to display is accessed from another webpage, its url can be linked using the 'src'
+            argument. src stands for 'source'. The source can either be a url or an image saved on the local hard drive -->
+            <img src="http://via.placeholder.com/640x360">
+            <img src="cat.jpeg">
+
+        </p>
+        <p>
+            <h4>Lists in html</h4>
+            - Two types of lists can be created in html: ordered and unordered lists.<br>
+            - These can be created using the &lt;ol&gt; + &lt;/ol&gt; and &lt;ul&gt; + &lt;/ul&gt; tags.<br>
+            - Each item in the list needs to placed inside the list tags &lt;li&gt; + &lt;/li&gt; <br>
+            - Here's an example of an unordered list of fruits: <br>
+            <ul>
+                <li>apples</li>
+                    <ul>
+                        <li>gala</li>
+                        <li>pink lady</li>
+                        <li>jazz</li>
+                    </ul>
+                <li>mangoes</li>
+                <li>oranges</li>
+                <li>pineapples</li>
+                <li>grapes</li>
+            </ul>
+            - Here's an example of an ordered list of fruits: <br>
+            <ol>
+                <li>apples</li>
+                <li>mangoes</li>
+                <li>oranges</li>
+                <li>pineapples</li>
+                <li>grapes</li>
+            </ol>
+            <!-- Line breaks are indroduced automatically afte the list end tags -->
+            - You can even create nested lists by placing another list and list elements tag inside a list element.
+
+        </p>
+        <p>
+            <h4>Tables in html</h4>
+            As an example, create a montly budget table for a household:<br>
+            <table>
+                <tr> <!-- This tag is used to create a row element in the table -->
+                    <th>Month</th> <!-- This tag is used to create a table header -->
+                    <th>Rent</th>
+                    <th>Utilities</th>
+                    <th>Groceries</th>
+                    <th>Dining out</th>
+                    <th>Entertainment</th>
+                </tr>
+                <tr>
+                    <td>August</td> <!-- This tag is used to add data to the table -->
+                    <td>$1500</td>
+                    <td>$150</td>
+                    <td>$350</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+            </table>
+            This table looks very basic. It can be made prettier and easier to read by using table tag attributes.<br>
+            <table border="1" cellpadding="10" cellspacing="2">
+                <tr> <!-- This tag is used to create a row element in the table -->
+                    <th>Month</th> <!-- This tag is used to create a table header -->
+                    <th>Rent</th>
+                    <th>Utilities</th>
+                    <th>Groceries</th>
+                    <th>Dining out</th>
+                    <th>Entertainment</th>
+                </tr>
+                <tr>
+                    <td>August</td> <!-- This tag is used to add data to the table -->
+                    <td>$1500</td>
+                    <td>$150</td>
+                    <td>$350</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+            </table>
+            You can also split columns and rows using colspan and rowspan attributes. <br>
+            <table border="1" cellpadding="10" cellspacing="2">
+                <tr> <!-- This tag is used to create a row element in the table -->
+                    <th>Season</th>
+                    <th>Month</th> <!-- This tag is used to create a table header -->
+                    <th>Rent</th>
+                    <th colspan="2">Utilities</th>
+                    <th>Groceries</th>
+                    <th>Dining out</th>
+                    <th>Entertainment</th>
+                </tr>
+                <tr>
+                    <td rowspan="3">Autumn</td>
+                    <td>August</td> <!-- This tag is used to add data to the table -->
+                    <td>$1500</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                    <td>$350</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>September</td> <!-- This tag is used to add data to the table -->
+                    <td>$1500</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                    <td>$350</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>October</td> <!-- This tag is used to add data to the table -->
+                    <td>$1500</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                    <td>$350</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+            </table>
+        </p>
+
+    </body>
+    
+
+</html>
