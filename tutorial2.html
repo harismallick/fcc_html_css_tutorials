@@ -4,6 +4,8 @@ discussed.
 - Validating your html document: use a markup validation service. 
 - W3C is the source you should be using for this.
 - Variables and elements placed inside the head tag are not seen on the webpage.
+- All tags can be modified using attributes. A list of all html attributes can be accessed here:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
 
 -->
 
@@ -12,10 +14,12 @@ discussed.
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Haris Mallick">
+        <meta name="author" content="Haris Mallick"> <!-- add owner details-->
+        <meta name="description" content="This webpage is a tutorial on html available on free code camp on YouTube.">
         <title>FCC Tutorial 2</title> <!-- The style tag can be used to inject CSS stylistic syntax
                                     to modify how the webpage looks. -->
-        <style> 
+        <link rel="icon" href="logo.png" type="image/x-icon">
+        <!-- <style> 
             html {
                 font-size: 16px
             }
@@ -23,13 +27,42 @@ discussed.
                 background-color: #000000;
                 color: whitesmoke;
             }
-        </style>
+        </style> -->
+        <!-- Another way of stylising the html page is by importing a CSS template by using the link tag, as shown for the icon. -->
+        <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body>
-        <h2>Blanket text</h2>
+        <h1>This is the title</h1>
+        <h2>This is a subheading</h2>
+
         <p><!-- A quick way to create the html tags in VS Code is to write the letter of the tag
             and then press tab. The auto code complete will automatically add the <> and end tag. -->
-            This is a test web page.
+            This is example text under the subheading.
         </p>
+        <h3>This is a sub-subheading</h3>
+        <p>This is text under the sub-subheading. Different header sizes help give symantic meaning to the text displayed on the webpage. It helps give structure to the text.<br>
+        Another way of separating the text into sections is by using horizontal lines. Like this: <br>
+        <hr></p>
+        <p>Block element tags naturally create a line break after their corresponding end tag. There are in-line element tags that can be used to manipulate text within the block tags. These include: <br>
+        <ul>
+            <li><b>writing in bold</b></li>
+            <li><i>writing in italics</i></li>
+            <li><u>writing in underline</u></li>
+        </ul>
+        
+        </p>
+        <p>
+            HTML entities: <br>
+            HTML uses symbols in its syntax which cannot be written out as plain text. To write them as plain text, entities need to be used that represent them. These can be studies further at the following link: <br>
+            <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank">html entities</a>
+        </p>
+        <p>
+            Adding abbreviations to html: <br>
+            This is achieved using the &lt;abbr&gt; in-line element. You can write the abbreviation, and when the end-user hovers over the abbreviated text, they will be able to see the full version. For example: <br>
+            <abbr title="Great Britain">GB</abbr><br>
+            <abbr title="United States of America">USA</abbr><br>
+            <b>Disclaimer:</b> this feature may not be available on all screen readers. So don't abbreviate words that are essential to understanding the text on the page.
+        </p>
+
     </body>
 </html>
