@@ -32,6 +32,16 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
         <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body>
+        <hr>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#html_basics">Learning HTML basics</a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+        <section id="html_basics">
         <h1>This is the title</h1>
         <h2>This is a subheading</h2>
 
@@ -51,6 +61,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
         </ul>
         
         </p>
+        </section>
+        <section id="html_entities">
         <p>
             HTML entities: <br>
             HTML uses symbols in its syntax which cannot be written out as plain text. To write them as plain text, entities need to be used that represent them. These can be studies further at the following link: <br>
@@ -63,6 +75,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
             <abbr title="United States of America">USA</abbr><br>
             <b>Disclaimer:</b> this feature may not be available on all screen readers. So don't abbreviate words that are essential to understanding the text on the page.
         </p>
+        </section>
         <p>
             There are three types of lists that can be created in HTML:<br>
             <ul>
@@ -84,7 +97,17 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
             Unintuitively, you do not use the &lt;link&gt; tag to add links to other webpages to your html page. You actually use the &lt;a&gt; tag, which stands for 'anchor'. It anchors a web link to a section of text in your html.<br>
             Here is an example:<br>
             <abbr title="Mozilla Developer Network"><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a></abbr><br><br>
-            The 'href' attribute is needed to link the webpage to the desired text.
+            The 'href' attribute is needed to link the webpage to the desired text.<br>
+            The reference link that you anchor can be absolute or relative. Relative references are best used when you want to link documents, images, other html pages that are present in the same directory on your computer or the server.<br>
+            Linking the icon and the stylesheet are examples of relative references used in this example.<br>
+            <dl>
+                <dt><a href="about.html" target="_blank">Haris</a></dt>
+                <dd>Click name for more information.</dd>
+            </dl>
+        </p>
+        <hr>
+        <p>
+            <a href="#">Back to Top</a>
         </p>
 
     </body>
