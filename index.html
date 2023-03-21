@@ -41,7 +41,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
                     <a href="#html_basics">Learning HTML basics</a> <!-- Using a hashtag before the href to a specific section is essential. Navigation feature will not work otherwise. -->
                 </li>
                 <li>
-                    <a href="#Chapter 7">Chapter 7: Semantic tags</a>
+                    <a href="#Chapter_7">Chapter 7: Semantic tags</a>
                 </li>
                 <li>
                     <a href="#contact">Contact me</a>
@@ -62,19 +62,22 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
         <h3>This is a sub-subheading</h3>
         <p>This is text under the sub-subheading. Different header sizes help give symantic meaning to the text displayed on the webpage. It helps give structure to the text.<br>
         Another way of separating the text into sections is by using horizontal lines. Like this: <br>
-        <hr></p>
-        <p>Block element tags naturally create a line break after their corresponding end tag. There are in-line element tags that can be used to manipulate text within the block tags. These include: <br>
-        <ul>
-            <li><b>writing in bold</b></li>
-            <li><i>writing in italics</i></li>
-            <li><u>writing in underline</u></li>
-        </ul>
-        
         </p>
+        <hr>
+        <p>
+            Block element tags naturally create a line break after their corresponding end tag. There are in-line element tags that can be used to manipulate text within the block tags. These include:
+            <ul>
+                <li><b>writing in bold</b></li>
+                <li><i>writing in italics</i></li>
+                <li><u>writing in underline</u></li>
+            </ul>
+        </p>
+
         </section>
+        <hr>
         <section id="html_entities">
         <p>
-            HTML entities: <br>
+            HTML entities: <br><br>
             HTML uses symbols in its syntax which cannot be written out as plain text. To write them as plain text, entities need to be used that represent them. These can be studies further at the following link: <br>
             <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank">html entities</a>
         </p>
@@ -149,7 +152,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
             <figcaption>A Caribbean vacation image.</figcaption>
         </figure>
         <hr>
-        <section id="Chapter 7">
+        <section id="Chapter_7">
         <h2>Adding semantic tags to your html page</h2>
         <p>
             <ul>
@@ -173,7 +176,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
             </aside>
         </p>
         </section>
-        <section id="Chapter 8">
+        <section id="Chapter_8">
             <h2>Chapter 8: Adding tables to html</h2>
 
             <ul>
@@ -219,6 +222,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
                 </tfoot>
             </table>
         </section>
+        <hr>
         <section id="contact">
             <h2>Forms and user-input data in HTML</h2>
             <p>
@@ -226,11 +230,146 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
                 Here is an example of setting up an HTML form with contact information. You use the &lt;form&gt; tag to achieve this.<br>
                 <ul>
                     <li>The action attribute of form determines where the user-input data will go. This can be another website or the local host server.</li>
+                    <li>You also need to declare what kind of http request is being made (get or post)</li>
+                    <li>Within the form, you can declare labels for what type of information needs to be input by the user. &lt;label&gt; tags used for this. The text between the opening and closing tags will be displayed to the user. One of the attributes for label is 'for', where you can declare an id that is used to link the user input via the input tag, to the label tag.</li>
+                    <li>To create a section for the user to input data, use the &lt;input&gt; tag. This tag has three essential attributes: <br>
+                    <ol>
+                        <li>type - declare the type of data to be input by the user.</li>
+                        <li>name - declare a name for this input data. It MUST match the 'for' id of the label the data links to.</li>
+                        <li>id - this can be the same as the string used in 'name' attribute. Id is used by screen readers.</li>
+                    </ol></li>
+                    <li>There are other attributes that can be used with input tag, but are not essential:
+                        <ol>
+                            <li>placeholder - declare a string which will be displayed as placeholder to assist the user. It disappears once user inputs something.</li>
+                            <li>autocomplete - Either 'on' or 'off' - HTML will suggest previous entries made in forms.</li>
+                            <li>required - adding this attribute means the input is essential in the form and cannot progress without it. Writing required sets boolean to true. Not writing 'required' has it set to false.</li>
+                            <li>autofocus - when the page is loaded, it will go to the element with autofocus enabled. ONLY one element per page can have the autofocus attribute.</li>
+                        </ol>
+                    </li>
+                    <li>What if you want to give the user options to choose from, rather than inputting certain data? This is achieved using the &lt;label&gt; with &lt;select&gt;, rather than &lt;input&gt;. Each option for the user is declared using the &lt;option&gt; tag. Select have essential attributes 'name' and 'id', like input, that need to match the 'for' attribute of label.</li>
+                    <li>For semantics and better organisation, the options can be further grouped into option groups. This is done by placing the &lt;optgroup&gt; tags around a set of options. </li>
+                    <li>Other attributes of 'select' that can be used are:<br>
+                    <ul>
+                        <li>multiple - writing this in will allow the user to select more than one option.</li>
+                        <li>size - this takes a number input which determines how many options will be displayed on the screen before use of scroll wheel is needed. By default, it is set to 1.</li>
+                    </ul></li>
+                    <li>Different input form labels can be organised into sections using the &lt;fieldset&gt; tag. Use the legend tag to give the fieldset a description.</li>
+                    <li>input tag ids MUST be unique across the entire webpage! No two input locations on the same webpage should use the same id, as that will cause errors in the output.</li>
+                    <li>How to submit the input data in the form? Need a button with the data type 'submit'. This will create a json from all the fields completed and left blank by the user.</li>
+                    <li>The input 'ids' are the dictionary keys, and the user input are the values.</li>
+                    <li>A http get request was used in the example form below. Its limitation is quite apparent! Every bit of user input data is added to the url. This is not ideal for security reasons! Must use post request.</li>
                 </ul>
             </p>
             <form action="https://httpbin.org/get" method="get">
-                <label for="firstname">First Name:</label>
-                <input type="text" name="firstname" id="firstname"> <!-- The 'name' and 'id' attributes of input need to match the string in the 'for' attribute in label -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <p>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="John" autocomplete="on" required> <!-- The 'name' and 'id' attributes of input need to match the string in the 'for' attribute in label -->
+                    </p>
+                    <p>
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Doe" autocomplete="on" required>
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" placeholder="secret" required> <!-- Different datatype for password. This ensures the inputted text is not visible on the screen. Cannot use autocomplete attribute for passwords -->
+                    </p>
+                    <p>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" name="phone" id="phone" placeholder="0800-500-5000" required pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"> <!-- For inputting phone numbers, change the datatype to 'tel'. One attribute that can be used here is 'pattern', which requires a regex input. This will format the user input into the regex pattern declared. -->
+                    </p>
+                    <p>
+                        <label for="decade">Favourite decade:</label>
+                        <input type="number" name="decade" id="decade" min="1920" max="2020" step="10" value="1980"> <!-- The number data type creates an up-down arrow in the dialog box to cycle between the different number options given in the determined range. -->
+                    </p>
+                    <p>
+                        <h3>Dropdown list using select, optgroup and option tags:</h3>
+                        <label for="coffee">Favourite Coffee</label>
+                        <select name="coffee" id="coffee" size="5">
+                            <optgroup label="Coffees"> <!-- The label is visible to users -->
+                                <option value="regular">Regular Coffee</option>
+                                <option value="iced">Iced Coffee</option>
+                                <option value="flat white">Flat White</option>
+                            </optgroup>
+                            <optgroup label="Espresso Drinks">    
+                                <option value="latte" selected>Latte</option> <!-- The 'selected' attribute allows one option to be displayed to the user. If this attribute is not used, the first option will be shown by default. ONLY one option can have the selected attribute.-->
+                                <option value="cappucino">Cappucino</option>
+                                <option value="americano">Americano</option>
+                            </optgroup>
+                            <option value="other">Other</option>
+                        </select>
+                    </p>
+                    <p>
+                        <h3>Dropdown list using input, datalist and option tags:</h3>
+                        <label for="tea">Favourite Tea</label>
+                        <input type="text" name="tea" id="tea" list="tea-list">
+                        <datalist id="tea-list">
+                            <option value="black tea"> <!-- When creating this options data list, the </option> closing tag is not used. The value is displayed to the user. -->
+                            <option value="green tea">
+                            <option value="white tea">
+                            <option value="floral tea">
+                            <option value="herbal tea">
+                            
+                        </datalist>
+                    </p>
+                </fieldset>
+                <br>
+                <h3>Creating multiple choice list with radio and checkbox data type.</h3>
+                <p>
+                    Here, you create the input before the label. The 'for' of label still needs to match the 'id' of input. The name across different inputs needs to be kept identical, so when one option is selected, the other will be unselected. This is the case with radio buttons. <br><br>
+                    With checkbox data type, multiple options presented can be selected by the user.
+                </p>
+                <fieldset>
+                    <legend>What is your favourite food?</legend>
+                    <p>
+                        <input type="radio" name="food" id="tacos" value="tacos">
+                        <label for="tacos">Tacos</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="food" id="pizza" value="pizza">
+                        <label for="pizza">Pizza</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="food" id="other" value="other">
+                        <label for="other">Other</label>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Do you have pets?</legend>
+                    <p>
+                        <input type="checkbox" name="pets" id="dog" value="dog">
+                        <label for="dog">Dog</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="cat" value="cat">
+                        <label for="cat">Cat</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="fish" value="fish">
+                        <label for="fish">fish</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="bird" value="bird">
+                        <label for="bird">Bird</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="otherPet" value="other">
+                        <label for="otherPet">Other</label>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Send me a note</legend>
+                    <label for="message">Your Message:</label>
+                    <br>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here..."></textarea>
+                </fieldset>
+                <br>
+                <button type="submit">'GET' Submit</button>
+                <button type="submit" formaction="https://httpbin.org/post" formmethod="post">'POST' Submit</button>
+                <button type="reset">Reset inputs</button>
             </form>
         </section>
         </main>
