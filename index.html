@@ -43,6 +43,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
                 <li>
                     <a href="#Chapter 7">Chapter 7: Semantic tags</a>
                 </li>
+                <li>
+                    <a href="#contact">Contact me</a>
+                </li>
             </ul>
         </nav>
         </header>
@@ -215,6 +218,20 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
                     </td>
                 </tfoot>
             </table>
+        </section>
+        <section id="contact">
+            <h2>Forms and user-input data in HTML</h2>
+            <p>
+                <h3>Contact me</h3>
+                Here is an example of setting up an HTML form with contact information. You use the &lt;form&gt; tag to achieve this.<br>
+                <ul>
+                    <li>The action attribute of form determines where the user-input data will go. This can be another website or the local host server.</li>
+                </ul>
+            </p>
+            <form action="https://httpbin.org/get" method="get">
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname" id="firstname"> <!-- The 'name' and 'id' attributes of input need to match the string in the 'for' attribute in label -->
+            </form>
         </section>
         </main>
         <hr>
